@@ -1,28 +1,15 @@
 class Banco {
-   public static void main(String[] args) {
-      System.out.println("Banco aberto!");
-      ContaBancaria conta1 = new ContaBancaria(
-         "João", 
-         1000.0
-      );
+   // Modificar as classes Banco e ContaBancaria para conseguir contabilizar a quantidade de contas bancárias criadas por banco
 
-      System.out.println("Criando conta para João com saldo inicial de 1000.0");
-
-      ContaBancaria conta2 = new ContaBancaria(
-         "Maria", 
-         0
-      );
-
-      conta1.ExibirInformacoes();
-
-      conta1.Depositar(500.0);
-      conta1.ExibirInformacoes();
-
-      conta1.Sacar(200.0);
-      conta1.ExibirInformacoes();
-
-      conta1.Transferir(conta2, 1600.0);
-      conta1.ExibirInformacoes();
-      conta2.ExibirInformacoes();
+   private static final String NOME_BANCO = "Banco do Brasil";
+   
+   public static int QuantidadeDeContas(){
+      return ContaBancaria.QuantidadeDeContas();
    }
+ 
+   public String toString(){
+      return NOME_BANCO;
+   }
+
+   
 }

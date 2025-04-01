@@ -1,6 +1,7 @@
 public class ContaBancaria {
    private String titular;
    private double saldo;
+   private static int quantidadeContas = 0;
 
    public String getTitular() {
       return this.titular;
@@ -10,10 +11,18 @@ public class ContaBancaria {
       return this.saldo;
    }
 
-
+   // Constructor
    public ContaBancaria(String titular, double saldo) {
       this.titular = titular;
       this.saldo = saldo;
+      IncrementaContas();
+   }
+   private static void IncrementaContas(){
+      quantidadeContas++;
+   }
+
+   public static int QuantidadeDeContas() {
+      return quantidadeContas;
    }
 
    public void ExibirInformacoes(){
