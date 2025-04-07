@@ -1,11 +1,11 @@
 import java.util.Calendar;
-public class Data {
+class Data {
    int dia;
    int mes;
    int ano;
 
    public Data() {
-      Calendar hoje = java.util.Calendar.getInstance();
+      Calendar hoje = Calendar.getInstance();
       setData( hoje.get(Calendar.DAY_OF_MONTH),
                hoje.get(Calendar.MONTH)+1,
                hoje.get(Calendar.YEAR)
@@ -63,5 +63,13 @@ public class Data {
 
    public String toString(){
       return this.dia + "/" + this.mes + "/" + this.ano;
+   }
+
+   public static int CalcularIdade(Data dataNascimento, Data dataAtual) {
+      int idade = dataAtual.ano - dataNascimento.ano;
+      if (dataAtual.mes < dataNascimento.mes || (dataAtual.mes == dataNascimento.mes && dataAtual.dia < dataNascimento.dia)) {
+         idade--;
+      }
+      return idade;
    }
 }
