@@ -18,8 +18,8 @@ class Utils{
 
 class Example2{
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         try {
-            Scanner scanner = new Scanner(System.in);
             double numero = scanner.nextDouble();
             double resultado = Utils.raizQuadrada(numero);
             System.out.println("A raiz quadrada de " + numero + " é: " + resultado);
@@ -28,6 +28,7 @@ class Example2{
         } catch (Exception e) {
             System.out.println("Ocorreu um erro inesperado: " + e.getMessage());
         } finally {
+            scanner.close();
             System.out.println("Fim da operação! 🎉");
         }
     }
