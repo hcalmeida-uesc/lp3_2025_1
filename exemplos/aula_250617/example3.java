@@ -20,6 +20,7 @@ class Example3 {
         System.out.print("Digite uma senha: ");
         Scanner scanner = new Scanner(System.in);
         String senha = scanner.nextLine();
+        scanner.close();
         try {
             Login.validarSenha(senha);
             System.out.println("Senha válida");
